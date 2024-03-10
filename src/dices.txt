@@ -1,0 +1,45 @@
+// Ler uma quantidade de jogadas do teclado.
+var tmp = read('Entre com uma quantidade de jogadas de dados: ');
+final var runs = toint(tmp ?? '0');
+assert(runs > 0, 'Quantidade de jogadas invalida');
+
+ //Sortear rodadas aleatorias do dado.
+var? i = 0; var? r; var? freqs = {};
+while (i++ < runs) {
+  r = random(6) + 1;
+ if (freqs[r] == null)
+    freqs[r] = 1;
+  else
+    freqs[r]++;
+}
+var lista  = [1,2,3,4,5,6];
+var teste;
+var dobro;
+for(teste in lista){
+	dobro = 2* teste;
+	print(dobro);
+}
+
+
+
+// Sumarizar as frequencias obtidas em listas.
+var side;
+final var halve1 = [for (side in [1,2,3]) freqs[side] ?? 0];
+final var halve2 = [for (side in [4,5,6]) freqs[side] ?? 0];
+final var all = [...halve1, ...halve2];
+
+//print(halve1);
+//print(halve2);
+print(freqs);
+
+// Imprimir os resultados.
+print('Mapa ' + tostr(freqs));
+print('Primeira metade: ' + tostr(halve1));
+print('Segunda metade: ' + tostr(halve2));
+print('Todos: ' + tostr(all));
+
+print(2+1);
+var s = 7;
+var x = [3,2,4,5,6];
+var h = s + x;
+print(h);
